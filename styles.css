@@ -258,6 +258,13 @@ body{
   }
 }
 
+@media (max-width: 600px) {
+  .hero-right {
+    display: none;
+  }
+}
+
+
 /* Ajuste padding para móviles */
 @media (max-width:600px){
   :root {
