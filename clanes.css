@@ -1,4 +1,4 @@
-:root{
+:root {
   --bg: #0b0b0d;
   --accent-2: #ffd166;
   --muted: #9aa0a6;
@@ -10,93 +10,98 @@
 }
 
 /* Reset básico */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;scroll-behavior:smooth}
-body{
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
+  background: #0b0b0d;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
 }
 
 /* ===== HEADER ===== */
-.site-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:12px var(--pad);
-  max-width:var(--maxw);
-  margin:12px auto;
-  position: relative;
-}
-
-.brand{display:flex;align-items:center;gap:12px}
-
-.logo-img{
-  width:56px;
-  height:56px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-.brand-text .site-title{
-  font-weight:800;
-  font-size:18px;
-  color:var(--accent-2);
-}
-
-.brand-text .site-sub{
-  font-size:12px;
-  color:var(--muted);
-}
-
-/* Menú principal */
-.main-nav {
+.site-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px var(--pad);
+  max-width: var(--maxw);
+  margin: 12px auto;
+  background: var(--glass);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
-.main-nav .nav-link{
-  color:var(--text);
-  text-decoration:none;
-  padding:6px 8px;
-  font-weight:700;
-  border-radius:6px;
-  display:inline-block;
-  white-space: nowrap;
-}
-.main-nav .nav-link.active{
-  color:#111;
-  background:var(--accent-2);
+
+.logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-/* Botón hamburguesa para móvil */
-.menu-toggle {
-  display: none;
-  background: var(--accent-2);
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
+.brand-text .site-title {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--accent-2);
+}
+
+.brand-text .site-sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.main-nav .nav-link {
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 8px;
   font-weight: 700;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+}
+.main-nav .nav-link:hover:not(.active) {
+  background: rgba(255, 209, 102, 0.1);
+}
+.main-nav .nav-link.active {
   color: #111;
-  user-select: none;
-  z-index: 10000;
+  background: var(--accent-2);
 }
 
 /* Líder / botón TikTok */
-.leader-ct{display:flex;align-items:center;gap:8px}
-.leader-name{font-weight:700;color:var(--accent-2)}
-.tiktok-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:6px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.05);
-  transition:background .2s;
+.leader-ct {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--accent-2);
 }
-.tiktok-btn:hover{background:rgba(255,255,255,0.05)}
+.tiktok-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s;
+}
+.tiktok-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
 
 /* Badge discreto de autor */
 .credit-badge{
@@ -116,193 +121,196 @@ body{
   background: rgba(0,0,0,0.8);
 }
 
-/* ===== HERO ===== */
-.hero{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  max-width:var(--maxw);
-  margin:0 auto;
-  border-radius:12px;
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 var(--pad);
 }
 
-.banner{
-  width:100%;
-  height:400px;
-  object-fit:cover;
-  opacity:0.4;
-  position:absolute;
-  top:0;left:0;
-  z-index:0;
+/* Secciones de clanes */
+.clan-section {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 40px;
+  /* fallback para navegadores sin filtros */
+  background: rgba(0,0,0,0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
-.hero-content{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:60px var(--pad);
-  z-index:2;
-  flex-wrap: wrap;
+/* imagen de fondo borrosa */
+.clan-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("imagenes/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(6px) saturate(0.85) brightness(0.45);
+  transform: scale(1.06); /* evita bordes visibles al aplicar blur */
+  z-index: 0;
+  will-change: filter, transform;
 }
 
-.hero-left{flex:1;max-width:600px; min-width:280px;}
-
-.hero-left h1{
-  font-size:clamp(1.8rem, 4vw, 2.4rem);
-  color:var(--accent-2);
+/* capa oscura adicional para garantizar contraste del texto */
+.clan-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11,11,13,0.30);
+  z-index: 1;
+  pointer-events: none;
 }
 
-.tagline{
-  color:var(--accent-2);
-  margin-top:6px;
-  font-weight:600;
+/* contenido por encima del fondo */
+.clan-box,
+.clan-info {
+  position: relative;
+  z-index: 2;
 }
 
-.lead{
-  color:var(--muted);
-  margin-top:10px;
-  line-height:1.5;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+.clan-section h2 {
+  color: var(--accent-2);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 800;
 }
 
-/* botones en hero */
-.hero-buttons{margin-top:18px}
-.hero-buttons .btn{margin-right:8px}
-
-/* logo grande a la derecha */
-.hero-right{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex: 1;
-  min-width: 160px;
-}
-.hero-right .logo{
-  width: 100%;
-  max-width: 220px;
-  height:auto;
-  object-fit:contain;
-  border-radius:12px;
-  filter:drop-shadow(0 0 12px rgba(0,0,0,0.7));
+.clan-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
 }
 
-/* ===== BOTONES ===== */
-.btn{
-  background:var(--accent-2);
-  color:#111;
-  border:none;
-  padding:10px 16px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:700;
-  text-decoration:none;
-  transition:all .15s ease;
-  display:inline-block;
-  font-size: clamp(14px, 2vw, 16px);
-}
-.btn:hover{filter:brightness(1.05)}
-
-.btn.outline{
-  background:transparent;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,0.08);
-}
-.btn.outline:hover{background:rgba(255,255,255,0.05)}
-
-/* ===== SECCIÓN ===== */
-.section{
-  max-width:var(--maxw);
-  margin:40px auto;
-  padding:24px;
-  background:var(--glass);
-  border-radius:var(--radius);
-  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+.clan-info {
+  color: var(--muted);
+  text-align: center;
 }
 
-.section h2{color:var(--accent-2);font-size:1.6rem;margin-bottom:10px}
-.section p{line-height:1.5}
-.section ul{margin-top:12px;list-style:none}
-.section li{color:var(--muted);margin-bottom:6px}
-.quick-links{margin-top:18px}
+.clan-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  border: 3px solid var(--accent-2);
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.clan-info p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.clan-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px auto;
+  max-width: 500px;
+  color: var(--muted);
+  text-align: left;
+}
+
+.clan-info ul li {
+  margin-bottom: 8px;
+  padding-left: 24px;
+  position: relative;
+  font-weight: 600;
+}
+
+.clan-info ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-2);
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+  top: 2px;
+}
+
+.req-title {
+  color: var(--accent-2);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.req-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 450px;
+  margin: 0 auto;
+  color: var(--text);
+  font-weight: 600;
+  text-align: left;
+}
+
+.req-list li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.req-list li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 16px;
+}
 
 /* ===== FOOTER ===== */
-.site-footer{
-  text-align:center;
-  color:var(--muted);
-  padding:18px;
-  margin-top:30px;
-  border-top:1px solid rgba(255,255,255,0.05);
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 18px var(--pad);
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  user-select: none;
 }
 
-/* toast */
-.toast.hidden{display:none}
+
+/* ===== TOAST (oculto por defecto) ===== */
+.toast.hidden {
+  display: none;
+}
 
 /* ===== RESPONSIVE ===== */
-@media (max-width:900px){
-  .hero-content{
-    flex-direction: column;
-    text-align: center;
-    padding: 40px var(--pad);
+@media (max-width: 900px) {
+  .clan-box {
+    padding: 16px 20px;
   }
-  .hero-right .logo{
-    max-width: 160px;
-    margin-top: 20px;
-  }
-  .banner{
-    height:300px;
+
+  .clan-info ul,
+  .req-list {
+    max-width: 100%;
   }
 }
 
-/* Ajuste padding para móviles */
-@media (max-width:600px){
-  :root {
-    --pad: 12px;
+@media (max-width: 600px) {
+  .clan-section h2 {
+    font-size: 1.4rem;
   }
-  .hero-left h1{
-    font-size: 1.8rem;
-  }
-  .lead{
-    font-size: 0.95rem;
-  }
-  .btn{
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-  /* Ocultar nav y mostrar botón hamburguesa */
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: var(--pad);
-    background: var(--glass);
-    border-radius: var(--radius);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-    padding: 12px;
-    width: 200px;
-    z-index: 9999;
-  }
-  .main-nav.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: inline-block;
-  }
-}
 
-/* Menú abierto con transición */
-.main-nav {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  opacity: 1;
-  visibility: visible;
-}
-.main-nav.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  .clan-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+  }
+
+  .clan-info p {
+    font-size: 0.9rem;
+  }
 }
